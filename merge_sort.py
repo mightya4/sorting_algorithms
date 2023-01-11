@@ -14,7 +14,7 @@ def merge(left, right):
     if left:
         result.extend(left[left_idx:])
     if right:
-        result.extend(right[right_idx])
+        result.extend(right[right_idx:])
     return result
 
 def merge_sort(m):
@@ -31,3 +31,10 @@ def merge_sort(m):
     left = merge_sort(left)
     right = merge_sort(right)
     return list(merge(left, right))
+
+    #test sort
+
+sample_arr = [5, 8, 1, 6, 7, 2, 4, 3]
+print("Test input")
+print(*sample_arr, sep=" , ")
+print(merge_sort(sample_arr))
