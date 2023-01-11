@@ -16,3 +16,18 @@ def merge(left, right):
     if right:
         result.extend(right[right_idx])
     return result
+
+def merge_sort(m):
+    #If array has at least one element return the array of that element
+    if len(m) <= 1:
+        return m
+
+    #divide the array has evenly as possible and save to left and right array
+    middle = len(m) // 2
+    left = m[:middle]
+    right = m[middle:]
+
+    #divide elements until down to base case
+    left = merge_sort(left)
+    right = merge_sort(right)
+    return list(merge(left, right))
