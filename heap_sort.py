@@ -9,3 +9,9 @@ def max_heapify(A, heap_size, i):
     if largest != i:
         A[i], A[largest] = A[largest], A[i]
         max_heapify(A, heap_size, largest)
+
+def build_heap(A):
+    heap_size = len(A)
+    for i in range ((heap_size/2), -1, -1):
+        max_heapify(A,heap_size, i)
+        
