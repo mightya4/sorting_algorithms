@@ -14,4 +14,12 @@ def build_heap(A):
     heap_size = len(A)
     for i in range ((heap_size/2), -1, -1):
         max_heapify(A,heap_size, i)
-        
+
+def heapsort(A):
+    heap_size = len(A)
+    build_heap(A)
+
+    for i in range(heap_size-1, 0, -1):
+        A[0], A[i] = A[i], A[0]
+        heap_size -= 1
+        max_heapify(A, heap_size, 0)
